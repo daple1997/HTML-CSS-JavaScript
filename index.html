@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            New City Bakery
+        </title>
+        <script type="text/javascript" src="script.js"></script>
+        <style>
+            h1,body{
+                text-align: center;
+                background-color: rgb(212, 145, 145);
+                padding: 30px;
+            }
+            form{
+                text-align: center;
+                border-color: solid black;
+                border-style: dotted;
+                background-color: bisque;
+                margin-left: 300px;
+                margin-right: 300px;
+            }
+            input{
+                float: left;
+            }
+            .centre{
+                margin-left:auto; 
+                margin-right:auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>New City Bakery</h1>
+            <p>Call: (403)-324-3421</p>
+            <p>Email: <a href="mailto:newCityBakery@newCityBakery.com">
+                newCityBakery@newCityBakery.com</a></p>
+        </header>
+        <h3>Register</h3>
+        <form id="register" onsubmit="register(); return false;">
+            <table class="centre"">
+                <tr><td>First Name:</td><td><input type="text" id="firstName" size="20" autofocus required></td></tr>
+                <tr><td>Last Name:</td><td><input type="text" id="lastName" size="20" required></td></tr>
+                <tr><td>Address:</td><td><input type="text" id="address" size="45" required></td></tr>
+                <tr><td>Phone:</td><td><input type="tel" id="phone" size="12" placeholder="(403)-999-999" maxlength="12" required></td></tr>
+                <tr><td>Postal Code:</td><td><input type="text" id="postalCode" placeholder="A1A 1A1" size="7" maxlength="7" required></td></tr>
+                <tr><td>Postal Code:</td><td><input type="email" id="email" placeholder="email@gmail.com" size="45" maxlength="45" required></td></tr>
+                <tr><td><input type="submit" value="Submit"></td></tr>
+            </table>           
+        </form>
+        <h3>Pick the shape of the cake</h3>
+        <form id="shapeCake">
+            <table class="centre">
+                <tr><td>
+                    <p><input type="radio" id="shapeCake1" name="shape"
+                        value="rectangular/Square" onclick="typeCake(this.value)"
+                        disabled="true">Rectangular/Square</p>
+                    </td>
+                </tr>
+                <tr><td>
+                    <p><input type="radio" id="shapeCake2" name="shape" value="round"
+                        onclick="typeCake(this.value)" disabled="true">Round</p>
+                    </td>
+                </tr>    
+            </table>
+        </form>
+        <h3>Pick the number of layers</h3>
+        <form id="layersCake">
+            <table class="centre">
+                <tr>
+                    <td><p><input type="radio" name="layers" value="1"
+                        onclick="numberLayers(this.value)" id="layersCake1"
+                        disabled="true">1</p></td>
+                    <td><p><input type="radio" name="layers" value="2"
+                        onclick="numberLayers(this.value)" id="layersCake2"
+                        disabled="true">2</p></td>
+                    <td><p><input type="radio" name="layers" value="3"
+                        onclick="numberLayers(this.value)" id="layersCake3"
+                        disabled="true">3</p></td>
+                </tr>
+            </table>
+        </form>
+        <h3>Additions</h3>
+        <form id = "addition">
+                <table class="centre">
+                    <tr>
+                        <td>Cream Cheese icing is an extra $5.00</td>
+                        <td><input type="checkbox" id="addition1" value="5.00"></td>
+                    </tr>
+                    <tr>
+                        <td>Fruit and Almonds topping is an extra $7.00</td>
+                        <td><input type="checkbox" id="addition2" value="7.00"></td>
+                    </tr>
+                    <tr>
+                        <td>Fruit jam filling between layers is an extra $4.00</td>
+                        <td><input type="checkbox" id="addition3" value="4.00"> </td>
+                    </tr>
+                </table>
+        </form>
+        <h3>Rectangular proportions</h3>
+        <form id="rectangularProportions" onsubmit="calculateRectangle(); return false;">
+            <table class="centre">
+                <tr>
+                    <td>Length(cm):</td><td><input type="number" name="length"
+                        size="2" min="30" max="60" disabled="true"
+                        id="rectangularProportions1"></td>
+                </tr>
+                <tr>
+                    <td>Width(cm):</td><td><input type="number" name="width"
+                        size="2" min="30" max="45" disabled="true"
+                        id="rectangularProportions2"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" disabled="true"
+                        id="rectangularProportions3"></td>
+                </tr>
+            </table>    
+        </form>
+        <h3>Circular Proportions</h3>
+        <form id="circularProportions" onsubmit="calculateCircle(); return false;">
+            <table class="centre">
+                <tr>
+                    <td>Radius(cm):</td>
+                    <td><input type="number" min="15" max="30" disabled="true"
+                        id="circularProportions1"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" disabled="true"
+                        id="circularProportions2"></td>
+                </tr>
+            </table>
+        </form>
+        
+    </body>
+</html>
